@@ -28,7 +28,7 @@ function getuserInform() {
             if (res.status !== 0) {
                 return layui.layer.msg('用户获取失败')
             }
-            console.log(res);
+            console.log(res.user_pic);
             renderavatar(res.data);
         }
     })
@@ -37,8 +37,10 @@ function getuserInform() {
 function renderavatar(user) {
     // 用户名称采取优先级
     var name = user.nickname || user.username;
+    console.log(name);
     // 设置文本
     $('.welcome').html('欢迎&nbsp&nbsp' + name);
+    console.log(user.user_pic);
     // 渲染用户头像
     if (user.user_pic !== null) {
         // 如果不为空，则渲染图片头像
