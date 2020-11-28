@@ -7,8 +7,9 @@ $(function() {
         // console.log(12);
         // 提示用户是否退出
         layer.confirm('是否退出登录?', { icon: 3, title: '提示' }, function(index) {
-            // 确定退出，执行清空本地存储，跳转到登录页面
+            // 确定退出，执行清空本地存储
             localStorage.removeItem('token');
+            // 强制跳转到登录页面
             location.href = '/login.html';
             // 这是关闭询问框
             layer.close(index);
